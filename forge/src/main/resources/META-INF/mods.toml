@@ -1,0 +1,36 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+#issueTrackerURL = ""
+license = "GPL v3"
+
+[[mods]]
+modId = "immortal_pets"
+version = "${version}"
+displayName = "Immortal Pets"
+logoFile = "icon.png"
+authors = "zooi"
+description = '''
+Makes all pets immortal, because it's too sad when they die.
+'''
+#logoFile = ""
+
+[[dependencies.immortal_pets]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.immortal_pets]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.immortal_pets]]
+modId = "architectury"
+mandatory = true
+versionRange = "[9.2.14,)"
+ordering = "AFTER"
+side = "BOTH"

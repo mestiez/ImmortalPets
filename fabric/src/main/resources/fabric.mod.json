@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "immortal_pets",
+  "version": "${version}",
+  "name": "Immortal Pets",
+  "description": "Makes all pets immortal, because it's too sad when they die.",
+  "authors": [
+    "zooi"
+  ],
+  "contact": {
+    "homepage": "mestiez.nl"
+  },
+  "license": "GPL v3",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.zooi.immortalpets.fabric.ImmortalPets"
+    ],
+    "client": [
+      "com.zooi.immortalpets.fabric.client.ImmortalPetsClient"
+    ]
+  },
+  "mixins": [
+    "immortal_pets.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "architectury": ">=9.2.14",
+    "fabric-api": "*"
+  }
+}
