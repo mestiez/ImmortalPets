@@ -1,23 +1,25 @@
 package com.zooi.immortalpets.mixin;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Tameable;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.WolfEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(AnimalEntity.class)
-public class AnimalMixin {
+@Mixin(LivingEntity.class)
+public class LivingEntityMixin {
     @Inject(at = @At("HEAD"), method = "damage", cancellable = true)
     public void preventDamage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        var animal = (AnimalEntity) (Object) this;
+        var e = (LivingEntity) (Object) this;
 
-        if (source.getType().equals(animal.getWorld().getDamageSources().genericKill().getType()))
+        if (source.getType().equals(e.getWorld().getDamageSources().genericKill().getType()))
             return;
 
-        if (animal instanceof Tameable pet && pet.getOwnerUuid() != null) {
+        if (e instanceof Tameable pet && pet.getOwnerUuid() != null) {
             cir.setReturnValue(false);
             cir.cancel();
         }

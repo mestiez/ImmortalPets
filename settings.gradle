@@ -11,4 +11,3 @@ rootProject.name = 'immortal_pets'
 
 include 'common'
 include 'fabric'
-include 'forge'
