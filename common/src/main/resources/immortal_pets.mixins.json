@@ -6,7 +6,7 @@
   "client": [
   ],
   "mixins": [
-    "TameableEntityMixin"
+    "AnimalMixin"
   ],
   "injectors": {
     "defaultRequire": 1
